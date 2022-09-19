@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>web点灯实验</title>
+	</head>
+		<body style="background-color: powderblue;">
+
+		<td height="500">
+			<div align="center">
+				<form id="form1" name="form1" method="post" action="cgi-bin/led_test.cgi">
+					<!--<div class="strip1">-->
+					<p style="font-family:xverdana;font-size:30px;color:red">
+						<input type="hidden" name="store" id="hiddenField" value="1"  /> Led:
+							<label>
+                <input type="radio" name="led" value="1" id="led_0" />
+                开</label>
+
+							<label>
+                <input type="radio" name="led" value="0" id="led_1" />
+                关</label>
+							<input type="submit" name="button" id="button" value="确定" />
+						<!--</div>-->
+					</p>
+					</form>
+				</div>
+			</td>
+		</body>

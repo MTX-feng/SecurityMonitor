@@ -12,14 +12,16 @@ pthread_mutex_t mutex_client_request,
 				mutex_sqlite,
 				mutex_transfer,
 				mutex_buzzer,
-				mutex_led;
+				mutex_led,
+				mutex_fun;
 /*条件变量声明*/
 pthread_cond_t  cond_client_request,
 				cond_refresh,
 				cond_sqlite,
 				cond_transfer,
 				cond_buzzer,
-				cond_led;
+				cond_led,
+				cond_fun;
 /*消息队列ID*/
 int msgid;
 /*共享内存ID*/
@@ -46,9 +48,9 @@ struct msg
 int send_msg_queue(long type,unsigned char text)
 {
 	struct msg msgbuf;
-	msgbuf.type =  1;  //从消息队列接收消息时用于判断的消息类型 HOME1 HOME2
-	msgbuf.msgtype = type;
-	msgbuf.text[0] = text;
+	msgbuf.type =  1;  		//从消息队列接收消息时用于判断的消息类型 HOME1 HOME2
+	msgbuf.msgtype = type;	//要控制的设备  
+	msgbuf.text[0] = text; 	//要发送的命令
 
 	if(msgsnd(msgid, &msgbuf, (sizeof(msgbuf) - sizeof(long)), 0) == -1)
 	{

@@ -1,0 +1,55 @@
+[15/Sep/2022:07:22:55 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:27:13 +0000] boa: server version Boa/0.94.13
+[15/Sep/2022:07:27:13 +0000] boa: server built Sep 15 2022 at 14:53:55.
+[15/Sep/2022:07:27:13 +0000] boa: starting server pid=27488, port 80
+[15/Sep/2022:07:28:04 +0000] request from 127.0.0.1 "GET /favicon.ico HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/favicon.ico"): document open: No such file or directory
+[15/Sep/2022:07:28:53 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:32:57 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:41:25 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:41:30 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:41:43 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:41:43 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:41:43 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:43:12 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:43:12 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:43:12 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:46:05 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:46:08 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:46:09 +0000] request from 127.0.0.1 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:46:19 +0000] request from 127.0.0.1 "GET /www/ HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/www/"): document open: No such file or directory
+[15/Sep/2022:07:46:43 +0000] request from 127.0.0.1 "GET /www/index.html HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/www/index.html"): document open: No such file or directory
+[15/Sep/2022:07:46:50 +0000] request from 127.0.0.1 "GET /boa/www/index.html HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/boa/www/index.html"): document open: No such file or directory
+[15/Sep/2022:07:52:50 +0000] request from 192.168.200.128 "GET /favicon.ico HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/favicon.ico"): document open: No such file or directory
+[15/Sep/2022:07:52:52 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:55:43 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:55:50 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:55:52 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:55:52 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:55:53 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:26 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:56:29 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:29 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:32 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:33 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:34 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:40 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:43 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi-bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi-bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:56:52 +0000] request from 192.168.200.128 "GET /home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/home/wxx/SecurityMonitor/boa/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:00 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:04 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:04 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:05 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:05 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:05 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:05 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:06 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:39 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:41 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:07:57:51 +0000] boa.c:194 - unable to bind: Permission denied
+[15/Sep/2022:07:57:58 +0000] request from 127.0.0.1 "GET /cgi_bin/test.cgi HTTP/1.1" ("/home/wxx/SecurityMonitor/boa/www/cgi_bin/test.cgi"): document open: No such file or directory
+[15/Sep/2022:08:41:13 +0000] boa.c:194 - unable to bind: Permission denied
+[16/Sep/2022:03:03:14 +0000] boa.c:194 - unable to bind: Permission denied
+[16/Sep/2022:03:04:04 +0000] boa.c:194 - unable to bind: Permission denied
+[16/Sep/2022:03:05:09 +0000] boa.c:194 - unable to bind: Permission denied
+[16/Sep/2022:03:05:28 +0000] boa.c:194 - unable to bind: Permission denied
+[16/Sep/2022:03:07:01 +0000] boa.c:194 - unable to bind: Permission denied

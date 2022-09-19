@@ -7,14 +7,16 @@ extern pthread_mutex_t mutex_client_request,
 				mutex_sqlite,
 				mutex_transfer,
 				mutex_buzzer,
-				mutex_led;
+				mutex_led,
+				mutex_fun;
 /*条件变量声明*/
 extern pthread_cond_t  cond_client_request,
 				cond_refresh,
 				cond_sqlite,
 				cond_transfer,
 				cond_buzzer,
-				cond_led;
+				cond_led,
+				cond_fun;
 /*消息队列ID*/
 extern int msgid;
 /*共享内存ID*/
@@ -27,7 +29,9 @@ pthread_t id_client_request,
 		  id_sqlite,
 		  id_transfer,
 		  id_buzzer,
-		  id_led;
+		  id_led,
+		  id_seg,
+		  id_fun;
 
 void release_pthread_resource(int sig);
 
@@ -40,6 +44,7 @@ int main(int argc, const char *argv[])
 	pthread_mutex_init(&mutex_transfer, NULL);
 	pthread_mutex_init(&mutex_buzzer, NULL);
 	pthread_mutex_init(&mutex_led, NULL);
+	pthread_mutex_init(&mutex_fun, NULL);
 
 	/*初始化条件变量*/
 	pthread_cond_init(&cond_client_request, NULL);
@@ -48,6 +53,7 @@ int main(int argc, const char *argv[])
 	pthread_cond_init(&cond_transfer, NULL);			
 	pthread_cond_init(&cond_buzzer, NULL);		
 	pthread_cond_init(&cond_led, NULL);
+	pthread_cond_init(&cond_fun, NULL);
 
 	/*创建线程*/
 	pthread_create(&id_client_request, NULL, pthread_client_request, NULL);
@@ -56,7 +62,8 @@ int main(int argc, const char *argv[])
 	pthread_create(&id_transfer, NULL, pthread_transfer, NULL);
 	pthread_create(&id_buzzer, NULL, pthread_buzzer, NULL);
 	pthread_create(&id_led, NULL, pthread_led, NULL);
-
+	pthread_create(&id_seg, NULL, pthread_seg, NULL);
+	pthread_create(&id_fun, NULL, pthread_fun, NULL);
 
 	/*等待线程结束回收线程*/
 	pthread_join(id_client_request, NULL);
@@ -65,6 +72,8 @@ int main(int argc, const char *argv[])
 	pthread_join(id_transfer, NULL);
 	pthread_join(id_buzzer, NULL);
 	pthread_join(id_led, NULL);
+	pthread_join(id_seg, NULL);
+	pthread_join(id_fun, NULL);
 
 	/*收到终止信号，释放线程资源
 		SIGINT----CTRL C
@@ -84,6 +93,7 @@ void release_pthread_resource(int sig)
 	pthread_mutex_destroy(&mutex_transfer);
 	pthread_mutex_destroy(&mutex_buzzer);
 	pthread_mutex_destroy(&mutex_led);
+	pthread_mutex_destroy(&mutex_fun);
 
 	/*释放条件变量*/
 	pthread_cond_destroy(&cond_client_request);
@@ -92,6 +102,7 @@ void release_pthread_resource(int sig)
 	pthread_cond_destroy(&cond_transfer);			
 	pthread_cond_destroy(&cond_buzzer);		
 	pthread_cond_destroy(&cond_led);
+	pthread_cond_destroy(&cond_fun);
 
 	/*回收线程———线程分离*/
 	pthread_detach(id_client_request);
@@ -100,6 +111,8 @@ void release_pthread_resource(int sig)
 	pthread_detach(id_transfer);
 	pthread_detach(id_buzzer);
 	pthread_detach(id_led);
+	pthread_detach(id_seg);
+	pthread_detach(id_fun);
 
 	printf("All pthread is reclaim\n");
 

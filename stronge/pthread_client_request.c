@@ -2,10 +2,10 @@
 	接受用户请求线程
 	对接收到不同的消息类型进行判断处理
 		消息类型分配
-		1L：	LED控制 pthread_led
-		2L：
-		3L：
-		4L：
+		1L：	LED控制 			pthread_led
+		2L：蜂鸣器控制 		pthread_buzzer
+		3L：模拟数码管       	pthread_seg
+		4L：zigbee风扇		pthread_fun
 		5L：
 		6L：
 		...
@@ -19,14 +19,16 @@ extern pthread_mutex_t 	mutex_client_request,
 						mutex_sqlite,
 						mutex_transfer,
 						mutex_buzzer,
-						mutex_led;
+						mutex_led,
+						mutex_fun;
 /*条件变量声明*/
 extern pthread_cond_t  	cond_client_request,
 						cond_refresh,
 						cond_sqlite,
 						cond_transfer,
 						cond_buzzer,
-						cond_led;
+						cond_led,
+						cond_fun;
 /*消息队列ID*/
 extern int msgid;
 extern key_t msg_key;
