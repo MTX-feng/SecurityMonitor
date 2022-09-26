@@ -59,16 +59,16 @@ int cgiMain()
 	sem_p(semid,0);
 
 	cgiHeaderContentType("text/html");
-	fprintf(cgiOut, "<head><meta http-equiv=\"refresh\" content=\"1\"><style><!--body{line-height:50}--></style> </head>");
+	fprintf(cgiOut, "<head><meta http-equiv=\"refresh\" content=\"1\"><style><!--body{line-height:50%}--></style> </head>");
 	fprintf(cgiOut, "<HTML>\n");
 	fprintf(cgiOut, "<BODY bgcolor=\"#666666\">\n");
 //fprintf(cgiOut, "<h1><font color=\"#FF0000\">HOME_ID #%d:</font></H2>\n ", shm_buf->shm_status);
 	if (shm_buf->shm_status == 1)
 	{
-		fprintf(cgiOut, "<script>function show(){var date =new Date(); var now = \"\"; now = date.getFullYear()+\"年\"; now = now + (date.getMonth()+1)+\"月\"; \ now = now + date.getDate()+\"日\"; now = now + date.getHours()+\"时\"; now = now + date.getMinutes()+\"分\";now = now + date.getSeconds()+\"秒\"; document.getElementById(\"nowDiv\").innerHTML = now; setTimeout(\"show()\",1000);} </script> \n ");	
+		fprintf(cgiOut, "<script>function show(){var date =new Date(); var now = \"\"; now = date.getFullYear()+\"年\"; now = now + (date.getMonth()+1)+\"月\"; \"now = now + date.getDate()+\"日\"; now = now + date.getHours()+\"时\"; now = now + date.getMinutes()+\"分\";now = now + date.getSeconds()+\"秒\"; document.getElementById(\"nowDiv\").innerHTML = now; setTimeout(\"show()\",1000);} </script> \n ");	
 		fprintf(cgiOut, "<h2><font face=\"Broadway\"><font color=\"#00FAF0\">Home1 Real-time Environment Info:</font></font></H2>\n ");
 		fprintf(cgiOut, "<h2 align=center><font color=\"#cc0033\"><body onload=\"show()\"> <div id=\"nowDiv\"></div></font></h2> \n "); 	
-	
+
 		fprintf(cgiOut, "<h4>ZIGBEE数据显示部分</H4>\n ");
 		fprintf(cgiOut, "<h4>Temperature:\t%0.2f</H4>\n ", shm_buf->sm_all_env_info.monitor_no[shm_buf->shm_status].zigbee_info.temperature );
 		fprintf(cgiOut, "<h4>Humidity:\t%0.2f</H4>\n ", shm_buf->sm_all_env_info.monitor_no[shm_buf->shm_status].zigbee_info.humidity);
@@ -83,9 +83,7 @@ int cgiMain()
 		fprintf(cgiOut, "<h4>AACZ :\t%d</H4>\n ", shm_buf->sm_all_env_info.monitor_no[shm_buf->shm_status].a9_info.aacz);
 		fprintf(cgiOut, "<h4>A9-RESERVED[0]:\t%d</H4>\n ", shm_buf->sm_all_env_info.monitor_no[shm_buf->shm_status].a9_info.reserved[0]);
 		fprintf(cgiOut, "<h4>A9-RESERVED[1]:\t%d</H4>\n ", shm_buf->sm_all_env_info.monitor_no[shm_buf->shm_status].a9_info.reserved[1]);
-		
-		fprintf(cgiOut, "<h4>STM32数据显示部分</H4>\n ");
-		fprintf(cgiOut, "<h4>......</H4>\n ");
+	
 	}
 	else
 	{

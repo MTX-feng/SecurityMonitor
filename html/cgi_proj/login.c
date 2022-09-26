@@ -77,7 +77,7 @@ void unencode_for_name_pass(char *input)
 	printf("Content-type: text/html\n\n");   //告诉编译器，用html语法来解析
 	if((strcmp(name,"1") == 0)&&(strcmp(pass,"1") == 0))
 	{
-		printf("<script language='javascript'>document.location = 'http://192.168.200.50/choose.html'</script>"); //自动跳转到这个页面	
+		printf("<script language='javascript'>document.location = 'http://192.168.101.100/choose.html'</script>"); //自动跳转到这个页面	
 	}
 	else{
 		printf("用户名或密码错误<br><br>");  

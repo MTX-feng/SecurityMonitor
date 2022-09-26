@@ -47,6 +47,12 @@
 #define		ADC_DEV   	   "/dev/fsadc0"  		//ADC
 #define   MPU6050_DEV    "/dev/fsmpu60500"  //mpu6050
 
+
+unsigned char  cmd_led;
+unsigned char  cmd_buzzer;
+unsigned char  cmd_seg;
+unsigned char  cmd_fan;
+
 /*********************************************************
   全局的结构体声明
  *********************************************************/

@@ -49,15 +49,15 @@ int cgiMain()
 
 	if (buf[0] == '1')
 	{
-		msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (2 << 4) | (1 << 0);
+		msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (1 << 6) | (1 << 0);
 	}
 	else
 	{
-		msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (2 << 4) | (0 << 0);
+		msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (1 << 6) | (0 << 0);
 	}
 
 	msg_buf.type = 1L;
-	msg_buf.msgtype = 4L;
+	msg_buf.msgtype = 1L;
 	msgsnd(msgid, &msg_buf,sizeof(msg_buf)-sizeof(long),0);
 
 	sto_no[0] -= 48;

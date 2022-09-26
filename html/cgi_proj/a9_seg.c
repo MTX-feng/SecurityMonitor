@@ -65,7 +65,7 @@ int cgiMain()
 
 
 	msg_buf.type = 1L;
-	msg_buf.msgtype = 4L;
+	msg_buf.msgtype = 3L;
 	msgsnd(msgid, &msg_buf,sizeof(msg_buf)-sizeof(long),0);
 
 	sto_no[0] -= 48;

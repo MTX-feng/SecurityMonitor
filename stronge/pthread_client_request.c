@@ -11,7 +11,8 @@
 		...
  *********************************/
  
- #include "data_global.h"
+#include "data_global.h"
+#include "linuxuart.h"
 
 /*互斥量声明*/
 extern pthread_mutex_t 	mutex_client_request,
@@ -35,26 +36,75 @@ extern key_t msg_key;
 /*消息队列结构体*/
 struct msg msgbuf;
 
+extern unsigned char  cmd_led;
+extern unsigned char  cmd_buzzer;
+extern unsigned char  cmd_seg;
+extern unsigned char  cmd_fan;
+
 void *pthread_client_request(void *arg)
 {
 	/**
 	 * 1.申请key
 	 * key_t ftok(const char *pathname, int proj_id)
 	 */
+	if((msg_key = ftok("/tmp", 'g')) < 0){
+		perror("ftok err");
+		exit(-1);
+	}
 
 	/**
 	 * 2.打开消息队列
 	 * int msgget(key_t key, int msgflg);
 	 */
+	msgid = msgget(msg_key, IPC_CREAT|IPC_EXCL|0666);
+	if(msgid == -1){
+		if(errno == EEXIST){
+			msgid = msgget(msg_key, 0777);
+		}else{
+			perror("msgget err");
+			exit(1);
+		}
+	}
+	printf("pthread_client_request\n");
 
 	/**
 	 * 3.从消息队列接受消息
 	 * ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp, int msgflg);
 	 */
+	while(1){
+		bzero(&msgbuf, sizeof(msgbuf));
+		printf("wait from client request\n");
+		msgrcv(msgid, &msgbuf, sizeof(msgbuf)-sizeof(long), 1, 0);
+		printf("Get %ldL msg\n", msgbuf.msgtype);
+		printf("text[0] = %#x\n", msgbuf.text[0]);
 	
 	/**
 	 * 4.判断具体的消息类型
 	 */
-	
+		switch(msgbuf.msgtype){
+			case 1L:
+				printf("-----------led_pthread----------\n");
+				break;
+			case 2L:
+				printf("-----------buzzer_pthread------------\n");
+				break;
+			case 3L:
+				printf("-----------seg_pthread------------\n");
+				break;
+			case 4L:
+				printf("------------fun_pthread-------------\n");
+				pthread_mutex_lock(&mutex_fun);
+				cmd_fan = msgbuf.text[0];
+				pthread_mutex_unlock(&mutex_fun);
+				break;
+			case 5L:
+				printf("-------------set env data--------------\n");
+				break;
+			default:
+				break;
+		}
+
+	}
+
 	exit(0);
 }

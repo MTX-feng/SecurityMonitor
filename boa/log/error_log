@@ -53,3 +53,9 @@
 [16/Sep/2022:03:05:09 +0000] boa.c:194 - unable to bind: Permission denied
 [16/Sep/2022:03:05:28 +0000] boa.c:194 - unable to bind: Permission denied
 [16/Sep/2022:03:07:01 +0000] boa.c:194 - unable to bind: Permission denied
+[22/Sep/2022:02:26:43 +0000] boa.c:194 - unable to bind: Permission denied
+[22/Sep/2022:02:26:58 +0000] boa.c:194 - unable to bind: Permission denied
+[22/Sep/2022:02:31:03 +0000] boa.c:194 - unable to bind: Permission denied
+[23/Sep/2022:09:15:11 +0000] boa.c:194 - unable to bind: Permission denied
+[23/Sep/2022:09:15:15 +0000] boa.c:194 - unable to bind: Permission denied
+[23/Sep/2022:09:17:50 +0000] boa.c:194 - unable to bind: Permission denied

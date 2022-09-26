@@ -27,42 +27,22 @@
 #include <linux/input.h>
 
 
-/*********************************************************
-	data_global.h : 
-	
-		全局的宏定义#define
-		全局的线程函数声明
-		全局的设备节点声明
-		全局的消息队列发送函数外部extern声明
-		全局的消息队列传递的结构体信息声明
-		
-*********************************************************/
-
-
-/*********************************************************
-	全局的宏定义
-*********************************************************/
 
 #define MONITOR_NUM   1
 #define QUEUE_MSG_LEN  32
 
-#define		GPRS_DEV   			 "/dev/ttyUSB0"
+#define		GPRS_DEV   			"/dev/ttyUSB0"
 #define		ZIGBEE_DEV 		 "/dev/ttyUSB1"
 #define		BEEPER_DEV 		 "/dev/fsbeeper0"
-#define		LED_DEV    			 "/dev/fsled0"
+#define		LED_DEV    		"/dev/fsled0"
 
-
-/*********************************************************
-	全局的结构体声明
-*********************************************************/
 
 typedef  unsigned char uint8_t;
 typedef  unsigned short uint16_t;
 typedef  unsigned int uint32_t;
 
-//考虑到内存对齐的问题
 struct makeru_zigbee_info{
-		uint8_t head[3]; //标识位: 'm' 's' 'm'  makeru-security-monitor  
+		uint8_t head[3]; 
 		uint8_t type;	 //数据类型  'z'---zigbee  'a'---a9
 		float temperature; //温度
 		float humidity;  //湿度
@@ -74,55 +54,39 @@ struct makeru_zigbee_info{
 };
 
 struct makeru_a9_info{
-	uint8_t head[3]; //标识位: 'm' 's' 'm'  makeru-security-monitor  
-	uint8_t type;	 //数据类型  'z'---zigbee  'a'---a9
+	uint8_t head[3]; 
+	uint8_t type;	 
 	float adc;
-	short gyrox;   //陀螺仪数据
+	short gyrox;   
 	short gyroy;
 	short gyroz;
-	short  aacx;  //加速计数据
+	short  aacx;  
 	short  aacy;
 	short aacz;
-	uint32_t reserved[2]; //保留扩展位，默认填充0
+	uint32_t reserved[2]; 
 };
 
 struct makeru_env_data{
 	struct makeru_a9_info       a9_info;    
 	struct makeru_zigbee_info   zigbee_info;
-	uint32_t reserved[2]; //保留扩展位，默认填充0
-};
+	uint32_t reserved[2]; 
 
-//所有监控区域的信息结构体
 struct env_info_client_addr
 {
-	struct makeru_env_data  monitor_no[MONITOR_NUM];	//数组  老家---新家
+	struct makeru_env_data  monitor_no[MONITOR_NUM];	
 };
 
-
-
-
-
-/*********************************************************
-	全局的外部线程函数声明
-*********************************************************/
-
-extern void *pthread_client_request (void *arg); //接收CGI 等的请求
-extern void *pthread_refresh(void *arg);              //刷新共享内存数据线程
-extern void *pthread_sqlite(void *arg);                 //数据库线程，保存数据库的数据
-extern void *pthread_transfer(void *arg);           //接收ZigBee的数据并解析
-extern void *pthread_sms(void *arg);                //发送短信线程
-extern void *pthread_buzzer(void *arg);          //蜂鸣器控制线程
-extern void *pthread_led(void *arg);                 //led灯控制线程
+extern void *pthread_client_request (void *arg);
+extern void *pthread_refresh(void *arg);           
+extern void *pthread_sqlite(void *arg);       
+extern void *pthread_transfer(void *arg);  
+extern void *pthread_sms(void *arg);      
+extern void *pthread_buzzer(void *arg);  
+extern void *pthread_led(void *arg); 
 
 
 extern int send_msg_queue(long type,unsigned char text);
 
-
-/*********************************************************
-	全局的消息队列传递的结构体声明
-*********************************************************/
-
-//消息队列结构体
 struct msg
 {
 	long type;//从消息队列接收消息时用于判断的消息类型

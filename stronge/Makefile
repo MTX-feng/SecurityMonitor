@@ -3,7 +3,7 @@ CC=$(CROSS_COMPOLE)gcc
 CFLAGS= -c -g
 LDFLAGS= -lpthread
 
-OBJS=main.o data_global.o pthread_transfer.o pthread_refresh.o\
+OBJS=main.o linuxuart.o data_global.o pthread_transfer.o pthread_refresh.o\
 	 pthread_client_request.o pthread_sqlite.o\
 	 pthread_buzzer.o pthread_led.o pthread_seg.o pthread_fun.o
 

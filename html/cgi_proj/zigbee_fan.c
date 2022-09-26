@@ -44,28 +44,29 @@ int cgiMain()
 		perror("msgget");
 		exit(1);
 	}
+	
 	bzero (msg_buf.text, sizeof (msg_buf.text));
 
 	switch (buf[0])
 	{
 		case '0':
 			{
-				msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (0 << 4) | (0 << 0);
+				msg_buf.text[0] = ((sto_no[0] - 48)) << 5 | (0 << 4) | (0 << 0);
 				break;
 			}
 		case '1':
 			{
-				msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (0 << 4) | (1 << 0);
+				msg_buf.text[0] = ((sto_no[0] - 48)) << 5 | (0 << 4) | (1 << 0);
 				break;
 			}
 		case '2':
 			{
-				msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (0 << 4) | (2 << 0);
+				msg_buf.text[0] = ((sto_no[0] - 48)) << 5 | (0 << 4) | (2 << 0);
 				break;
 			}
 		case '3':
 			{
-				msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (0 << 4) | (3 << 0);
+				msg_buf.text[0] = ((sto_no[0] - 48)) << 5 | (0 << 4) | (3 << 0);
 				break;
 			}
 	}

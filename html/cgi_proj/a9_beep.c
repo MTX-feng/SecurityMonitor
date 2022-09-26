@@ -44,7 +44,9 @@ int cgiMain()
 		perror("msgget");
 		exit(1);
 	}
-	/*
+
+	bzero (msg_buf.text, sizeof (msg_buf.text));
+	
 	if (buf[0] == '1')
 	{
 		msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (1 << 4) | (1 << 0);
@@ -53,7 +55,7 @@ int cgiMain()
 	{
 		msg_buf.text[0] = ((sto_no[0] - 48)) << 6 | (1 << 4) | (0 << 0);
 	}
-	*/
+	/*
 	switch (buf[0])
 	{
 		case '0':
@@ -77,9 +79,9 @@ int cgiMain()
 				break;
 			}
 	}
-
+	*/
 	msg_buf.type = 1L;
-	msg_buf.msgtype = 4L;
+	msg_buf.msgtype = 2L;
 	msgsnd(msgid, &msg_buf,sizeof(msg_buf)-sizeof(long),0);
 
 	sto_no[0] -= 48;
